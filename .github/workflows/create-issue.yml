@@ -1,0 +1,26 @@
+name: Create issue on Push
+
+on:
+  push:
+    
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+
+    steps:
+      - name: Create issue from a push
+        run: |
+          gh issue create  \
+          --title "New push detected" 
+          --body "A new push has been made to the repository
+
+        Commit: ${{ github.event.head_commit.id }}
+        Message: ${{ github.event.head_commit.message }}
+        Author: ${{ github.event.head_commit.author.name }}
+        Branch: ${{ github.ref_name}}"
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
