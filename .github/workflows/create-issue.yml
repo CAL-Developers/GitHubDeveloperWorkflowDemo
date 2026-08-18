@@ -17,10 +17,10 @@ jobs:
           --title "New push detected" 
           --body "A new push has been made to the repository
 
-        Commit: ${{ github.event.head_commit.id }}
-        Message: ${{ github.event.head_commit.message }}
-        Author: ${{ github.event.head_commit.author.name }}
-        Branch: ${{ github.ref_name}}"
+          Commit: ${{ github.event.head_commit.id }}
+          Message: ${{ github.event.head_commit.message }}
+          Author: ${{ github.event.head_commit.author.name }}
+          Branch: ${{ github.ref_name}}"
 
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
