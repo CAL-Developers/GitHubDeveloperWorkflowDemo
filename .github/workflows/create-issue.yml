@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Create issue from a push
         run: |
-          gh issue create  \
+          gh issue create \
           --title "New push detected" 
           --body "A new push has been made to the repository
 
